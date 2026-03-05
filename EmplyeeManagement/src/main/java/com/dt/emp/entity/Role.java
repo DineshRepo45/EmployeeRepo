@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 @Table(name = "roles")
 public class Role  extends Base{
-    @Column(nullable = false,unique = false)
+    @Column(nullable = false,unique = true)
     private String name;
     private String description;
     @OneToMany(mappedBy = "role")
