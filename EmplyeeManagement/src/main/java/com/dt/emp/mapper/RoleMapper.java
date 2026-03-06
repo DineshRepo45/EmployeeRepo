@@ -14,7 +14,7 @@ public class RoleMapper {
         role.setDescription(dto.getDescription());
         return role;
     }
-    public static RoleResponse toDto(Role role){
+    public RoleResponse toDto(Role role){
         if(role==null)
             return null;
 

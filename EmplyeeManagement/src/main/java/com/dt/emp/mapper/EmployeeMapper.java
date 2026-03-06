@@ -19,7 +19,7 @@ public class EmployeeMapper {
         employee.setStatus(dto.getStatus());
         return employee;
     }
-    public static EmployeeResponse mapToResponse(Employee employee){
+    public EmployeeResponse mapToResponse(Employee employee){
         EmployeeResponse dto=new EmployeeResponse();
         dto.setId(employee.getId());
         dto.setFirstName(employee.getFirstName());

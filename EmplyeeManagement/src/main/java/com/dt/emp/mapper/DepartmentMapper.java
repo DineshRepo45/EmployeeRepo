@@ -14,7 +14,7 @@ public class DepartmentMapper {
         department.setDescription(dto.getDescription());
         return  department;
     }
-    public static DepartmentResponse toDto(Department department){
+    public DepartmentResponse toDto(Department department){
         DepartmentResponse dto=new DepartmentResponse();
         if(department==null){
             return null;
