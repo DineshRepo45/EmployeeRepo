@@ -14,6 +14,7 @@ import lombok.Setter;
 public class Address extends Base {
     private String strect;
     private String city;
+    private String state;
     private String zipcode;
     private String country;
 
