@@ -6,45 +6,41 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
 @Entity
 @Getter
 @Setter
 @Table(name = "employees")
-public class Employee extends Base {
-    @Column(nullable = false)
-    private String employeeCode;
+public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(nullable = false)
     private String firstName;
 
-    @Column(nullable = false)
     private String lastName;
 
-    @Column(nullable = false,unique = true)
+    @Column(unique = true,nullable = false)
     private String email;
 
-    private String mobileNo;
+    private String phoneNumber;
 
-    private LocalDate dateOfBirth;
-
-    private String gender;
-
-    private LocalDate hireDate;
+    private LocalDate dob;
 
     private BigDecimal salary;
 
-    private String status;
+    private String address;
 
-    //Relationaship
+    private LocalDate joiningDate;
+
+    private String satus;
+
+
     @ManyToOne
     @JoinColumn(name = "department_id")
-     private Department department;
+    private Department department;
 
     @ManyToOne
     @JoinColumn(name = "role_id")
-     private Role role;
-
-    @OneToOne(mappedBy = "employee",cascade = CascadeType.ALL)
-     private Address address;
+    private Role role;
 }
