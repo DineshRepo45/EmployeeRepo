@@ -1,29 +1,25 @@
 package com.dt.emp.mapper;
 
-import com.dt.emp.dto.request.RoleRequest;
-import com.dt.emp.dto.response.RoleResponse;
+import com.dt.emp.dto.RoleDto;
 import com.dt.emp.entity.Role;
 
 public class RoleMapper {
-    public static Role toEntity(RoleRequest dto){
-        if(dto==null){
+    public static RoleDto mapToDto(Role role){
+        if(role==null){
             return null;
         }
-        Role role=new Role();
-        role.setName(dto.getName());
-        role.setDescription(dto.getDescription());
-        return role;
-    }
-    public RoleResponse toDto(Role role){
-        if(role==null)
-            return null;
-
-        RoleResponse dto=new RoleResponse();
+        RoleDto dto=new RoleDto();
         dto.setId(role.getId());
-        dto.setDescription(role.getDescription());
         dto.setName(role.getName());
         return dto;
-
     }
-
+    public static Role mapToEntity(RoleDto dto){
+        if(dto==null){
+            return  null;
+        }
+        Role role=new Role();
+        role.setId(dto.getId());
+        role.setName(dto.getName());
+        return  role;
+    }
 }
