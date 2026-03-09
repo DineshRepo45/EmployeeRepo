@@ -33,7 +33,7 @@ public class Employee {
 
     private LocalDate joiningDate;
 
-    private String satus;
+    private String status;
 
 
     @ManyToOne
@@ -43,4 +43,6 @@ public class Employee {
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
+
+
 }
