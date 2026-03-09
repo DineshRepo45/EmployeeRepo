@@ -27,5 +27,6 @@ public class DepartmentMapper {
         department.setId(dto.getId());
         department.setName(dto.getName());
         department.setDescription(department.getDescription());
+        return department;
     }
 }
